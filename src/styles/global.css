@@ -114,3 +114,19 @@
   }
 }
 
+/* Anti-Screenshot, Anti-Print & Privacy Protection */
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Prevent unwanted dragging & selection */
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
