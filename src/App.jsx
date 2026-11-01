@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import FloatingDecorations from './components/FloatingDecorations';
 import WelcomeScreen from './components/WelcomeScreen';
 import LetterSection from './components/LetterSection';
+import PeriodComfortKit from './components/PeriodComfortKit';
 import StoryCards from './components/StoryCards';
 import BusyDays from './components/BusyDays';
 import ReminderJar from './components/ReminderJar';
@@ -38,7 +39,10 @@ export default function App() {
         {/* Section 2: A Letter For You */}
         <LetterSection />
 
-        {/* Section 3: 100 Little Stories (Grid of 8) */}
+        {/* Dedicated Cramp Sanctuary: Interactive Comfort Kit & Heating Pad */}
+        <PeriodComfortKit />
+
+        {/* Section 3: Little Stories & Daily Archives */}
         <StoryCards />
 
         {/* Section 4: When I'm Busy (Peaceful Illustration, Cards, Status) */}
@@ -53,7 +57,7 @@ export default function App() {
         {/* Section 7: CEO of Random Updates Quiz */}
         <MiniQuiz />
 
-        {/* Section 8: Final Surprise & Night Sky */}
+        {/* Section 8: Final Surprise & Goodnight Warmth */}
         <FinalSurprise />
       </main>
 
@@ -68,7 +72,7 @@ export default function App() {
           </p>
           {visitData?.visitCount > 1 && (
             <p className="text-[11px] text-[#9B8491]">
-              Visit #{visitData.visitCount} • Still waiting for your next story 🌸
+              Visit #{visitData.visitCount} • Still sending warmth to your tummy 🌸
             </p>
           )}
         </div>
@@ -76,4 +80,3 @@ export default function App() {
     </div>
   );
 }
-

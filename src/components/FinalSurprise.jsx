@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sparkles, Heart, ChevronUp, Stars, Utensils } from 'lucide-react';
+import { Moon, Sparkles, Heart, ChevronUp, Stars, Utensils, Flame } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function FinalSurprise() {
@@ -76,7 +76,7 @@ export default function FinalSurprise() {
         <div className="relative z-10 text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-[#EFA9C4] font-medium mb-3">
             <Stars className="w-3.5 h-3.5 text-amber-300" />
-            The Final Page
+            The Final Page • Goodnight Warmth
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-2">
@@ -87,35 +87,35 @@ export default function FinalSurprise() {
         {/* Emotional Message */}
         <div className="relative z-10 max-w-2xl mx-auto space-y-6 text-base sm:text-lg text-white/90 leading-relaxed font-body text-center">
           <p>
-            Maybe I can't always be available at every moment.
+            Maybe I can't always be available at every single second.
           </p>
 
           <p>
-            But I don't want you to feel like you have to stop sharing your little world with me.
+            Especially on the days when your tummy is hurting, your energy feels depleted, and the cramps make you just want to curl up and hide away from the world.
           </p>
 
           <p className="font-serif text-xl sm:text-2xl text-[#EFA9C4] italic font-semibold">
-            "Keep telling me about your day."
+            "Please don't ever think you have to suffer alone or stop sharing your world with me."
           </p>
 
           <p>
-            Even the unnecessary details.
+            Keep telling me about your day. Even when you're cranky. Even when you're crying for no reason.
           </p>
 
           <p className="font-semibold text-white">
-            Especially those.
+            Especially then.
           </p>
 
           <p>
-            And when you feel like I have disappeared into my work, remind me that there's someone waiting to tell me about her day.
+            And when you feel like I have disappeared into my work, remind me that there's someone waiting to be listened to, cared for, and comforted.
           </p>
 
           <p>
-            I'll try to do better at making time for those conversations.
+            I will always make time for you. Because your heart, your comfort, and your little stories are irreplaceable to me.
           </p>
 
           <p className="text-[#FFE8A3] font-medium text-lg sm:text-xl">
-            Because your little stories deserve to be heard.
+            Rest your eyes now. Keep your tummy warm. Tomorrow will be gentler on you.
           </p>
 
           <p className="font-serif text-3xl text-[#EFA9C4] pt-2">
@@ -141,13 +141,13 @@ export default function FinalSurprise() {
               className="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-lg text-center"
             >
               <div className="w-12 h-12 rounded-full bg-amber-400/20 border border-amber-300/40 mx-auto mb-3 flex items-center justify-center text-xl">
-                🍕
+                ♨️
               </div>
               <p className="font-serif text-xl sm:text-2xl text-amber-200 font-bold mb-2">
-                "Okay, now go eat something. And text me when you're free. 😂"
+                "Did you reheat your heating pad? And did you drink warm water?"
               </p>
               <p className="font-handwritten text-xl text-[#EFA9C4] mt-3">
-                No excuses. Go get food right now!
+                Now pull that blanket all the way up, eat a chocolate, and rest. I'll be right here when you wake up. 😂🤍
               </p>
             </motion.div>
           )}
@@ -155,10 +155,10 @@ export default function FinalSurprise() {
           {/* Dedicated Subtext */}
           <div className="mt-10 pt-8 border-t border-white/15 text-center">
             <p className="font-handwritten text-2xl text-[#EFA9C4] mb-2">
-              Made with care, just for you. ♡
+              Made with infinite care, just for you. ♡
             </p>
             <p className="text-xs text-white/60 tracking-wider">
-              A tiny permanent corner of the internet for your endless stories
+              A tiny permanent corner of the internet for your pain, your comfort, and your endless stories
             </p>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function FinalSurprise() {
         <div className="absolute -bottom-2 inset-x-0 flex justify-around text-lg opacity-75 select-none pointer-events-none">
           <span>🌸</span>
           <span>✨</span>
-          <span>🌷</span>
+          <span>♨️</span>
           <span>✨</span>
           <span>🌸</span>
         </div>
@@ -186,4 +186,3 @@ export default function FinalSurprise() {
     </section>
   );
 }
-

@@ -5,6 +5,7 @@ import { Menu, X, Heart, Sparkles, BookOpen } from 'lucide-react';
 const navItems = [
   { id: 'welcome', label: 'Home', icon: '🌸' },
   { id: 'letter', label: 'Your Letter', icon: '💌' },
+  { id: 'comfort-kit', label: 'Cramp Care', icon: '♨️' },
   { id: 'stories', label: 'Little Stories', icon: '✨' },
   { id: 'busy', label: 'Busy Days', icon: '☁️' },
   { id: 'jar', label: 'Reminder Jar', icon: '🫙' },
@@ -171,4 +172,3 @@ export default function Navbar({ favoriteCount = 0 }) {
     </>
   );
 }
-

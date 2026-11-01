@@ -2,6 +2,66 @@ export const storiesData = [
   {
     id: 1,
     number: "01",
+    tag: "High Priority Alert",
+    emoji: "🩹",
+    badge: "THE CRAMP CRISIS",
+    title: "Pet me bohot tez dard ho raha hai...",
+    subtitle: "When the cramps hit like a thunderbolt",
+    preview: "Curled up in bed wishing pain had an off switch...",
+    response: "FIRST OF ALL, PLEASE LIE DOWN RIGHT NOW. 😭 Put that hot water bag on your stomach, pull the softest blanket, and drink some warm water. I hate seeing you in pain like this and feeling so helpless from miles away. Cancel everything today, you hear me?",
+    followUp: "Did you reheat the heating pad? Please say yes. Lie on your side with a pillow tucked between your knees. I'm sending you all the warmth in the universe.",
+    accentColor: "#FDEFF4",
+    borderColor: "#EFA9C4",
+    timeAgo: "Cramp Day 1"
+  },
+  {
+    id: 2,
+    number: "02",
+    tag: "Comfort Dispatch",
+    emoji: "🍫",
+    badge: "THE MEETHA CRAVING",
+    title: "Mujhe kuch meetha khana hai...",
+    subtitle: "The desperate hunt for chocolates & comfort",
+    preview: "Brain demanding serotonin immediately...",
+    response: "Craving protocol officially activated! 🍫 You are entitled to unlimited chocolates, pastries, ice cream, and warm comfort food today. Calories strictly do not exist during period week. Go eat whatever makes your tummy feel even 1% happier.",
+    followUp: "If I was there right now, I'd bring you a whole box of your favorite chocolates and a warm cup of cocoa without asking a single question.",
+    accentColor: "#FFF4E5",
+    borderColor: "#F8D7E3",
+    timeAgo: "4:15 PM"
+  },
+  {
+    id: 3,
+    number: "03",
+    tag: "Soft Tender Space",
+    emoji: "🥺",
+    badge: "UNEXPLAINED TEARS",
+    title: "Pata nahi kyu, rona aa raha hai...",
+    subtitle: "When the hormones create a silent storm",
+    preview: "Feeling fragile and teary for no reason...",
+    response: "Hey... come here. 🫂 It's completely okay. You don't need a logical explanation. Your body is going through an exhausting physical battle right now. Cry if you need to, complain as much as you want, get mad at the world—I am not going anywhere.",
+    followUp: "You never have to put on a brave or happy face for me. Even on your most emotional, cranky, or overwhelmed days, you are deeply cherished.",
+    accentColor: "#EAE3FA",
+    borderColor: "#C66C91",
+    timeAgo: "Yesterday night"
+  },
+  {
+    id: 4,
+    number: "04",
+    tag: "Burrito Mode",
+    emoji: "🛌",
+    badge: "ZERO ENERGY PROTOCOL",
+    title: "Bistar se uthne ka mann nahi hai.",
+    subtitle: "Gravity is at 500% strength today",
+    preview: "Energy battery at 2%...",
+    response: "THEN DO NOT MOVE AN INCH! Stay rolled up like a cozy burrito. The entire world can survive without you for a day. Rest, nap, watch silly comfort videos, and let your body heal.",
+    followUp: "No chores, no feeling guilty, no proving anything to anyone today. Just rest, okay?",
+    accentColor: "#FFFBF5",
+    borderColor: "#EFA9C4",
+    timeAgo: "Morning"
+  },
+  {
+    id: 5,
+    number: "05",
     tag: "Action Movie",
     emoji: "🏋️",
     badge: "GYM INCIDENT",
@@ -9,14 +69,14 @@ export const storiesData = [
     subtitle: "Gym adventures gone slightly sideways",
     preview: "First rule of gym: don't fight the dumbbells...",
     response: "FIRST OF ALL, ARE YOU OKAY? 😭 Please take care of yourself. Gym jaane gayi thi ya adventure karne?",
-    followUp: "Did you put an ice pack on it? Please say yes. And please stop doing stunts!",
+    followUp: "Did you put an ice pack on it? Please say yes. And please stop doing stunts, especially when you're already low on energy!",
     accentColor: "#FDEFF4",
     borderColor: "#EFA9C4",
     timeAgo: "2 hours ago"
   },
   {
-    id: 2,
-    number: "02",
+    id: 6,
+    number: "06",
     tag: "Code Red Alert",
     emoji: "🍕",
     badge: "THE HUNGER EMERGENCY",
@@ -30,38 +90,8 @@ export const storiesData = [
     timeAgo: "3:45 PM"
   },
   {
-    id: 3,
-    number: "03",
-    tag: "Official Application",
-    emoji: "🏡",
-    badge: "THE NIGHT STAY PLAN",
-    title: "Main friend ke ghar night stay chali jaun?",
-    subtitle: "Submitting formal paperwork for review",
-    preview: "Application ID: #NS-404 awaiting stamp",
-    response: "Madam, permission department is currently reviewing your application. 😂 Enjoy yourself and stay safe!",
-    followUp: "Application status: APPROVED with conditions: 1) Charge your phone. 2) Send me the gossip tomorrow.",
-    accentColor: "#EAE3FA",
-    borderColor: "#C66C91",
-    timeAgo: "Yesterday"
-  },
-  {
-    id: 4,
-    number: "04",
-    tag: "Expedition",
-    emoji: "🎡",
-    badge: "MELAA PLANS",
-    title: "Main mele mein chali jaun?",
-    subtitle: "Ferris wheels, candy floss & chaos",
-    preview: "Contemplating the giant wheel ride...",
-    response: "Of course! Go enjoy yourself. But I expect a full report of everything you saw.",
-    followUp: "Eat at least one ridiculous street snack and send photos of the weirdest stall you find!",
-    accentColor: "#FFFBF5",
-    borderColor: "#EFA9C4",
-    timeAgo: "Last weekend"
-  },
-  {
-    id: 5,
-    number: "05",
+    id: 7,
+    number: "07",
     tag: "Tragedy in 3 Acts",
     emoji: "💅",
     badge: "NAIL EMERGENCY",
@@ -75,8 +105,8 @@ export const storiesData = [
     timeAgo: "Just now"
   },
   {
-    id: 6,
-    number: "06",
+    id: 8,
+    number: "08",
     tag: "Daily Hazard",
     emoji: "😂",
     badge: "THE FALLING INCIDENT",
@@ -90,8 +120,8 @@ export const storiesData = [
     timeAgo: "11:20 AM"
   },
   {
-    id: 7,
-    number: "07",
+    id: 9,
+    number: "09",
     tag: "Breaking News",
     emoji: "☕",
     badge: "THE GOSSIP SESSION",
@@ -105,8 +135,8 @@ export const storiesData = [
     timeAgo: "5 mins ago"
   },
   {
-    id: 8,
-    number: "08",
+    id: 10,
+    number: "10",
     tag: "My Favourite",
     emoji: "💌",
     badge: "THE RANDOM UPDATE",
@@ -114,10 +144,9 @@ export const storiesData = [
     subtitle: "No context, no reason, just pure you",
     preview: "The thought crossed your mind so here it is...",
     response: "And these are actually my favourite updates. Never stop sharing the little things.",
-    followUp: "You never need a grand reason to talk to me. The silly little random thoughts are the best ones.",
+    followUp: "You never need a grand reason to talk to me. The silly little random thoughts and cranky period rants are the best ones.",
     accentColor: "#FDEFF4",
     borderColor: "#C66C91",
     timeAgo: "Always"
   }
 ];
-

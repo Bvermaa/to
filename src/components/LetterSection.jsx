@@ -30,7 +30,7 @@ export default function LetterSection() {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#FCEBF2] shadow-xs text-xs font-medium text-[#C66C91] mb-3"
         >
-          <span>💌</span> Chapter One
+          <span>💌</span> Chapter One • An Honest Letter
         </motion.div>
         
         <motion.h2
@@ -78,7 +78,7 @@ export default function LetterSection() {
               </h3>
 
               <p className="font-handwritten text-xl text-[#9B8491] mb-6">
-                "Tap here to break the seal and read..."
+                "Tap here to break the wax seal and read..."
               </p>
 
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C66C91] text-white text-sm font-medium shadow-xs group-hover:bg-[#EFA9C4] transition-colors">
@@ -136,15 +136,23 @@ export default function LetterSection() {
                 </p>
 
                 <p>
-                  I might not always be available at the exact moment you want to talk, but that doesn't mean your little stories are unimportant to me.
+                  Especially on the days when your tummy hurts, when the cramps make every minute feel long and exhausting, and you're lying alone in bed wishing the pain would just stop.
+                </p>
+
+                <p className="font-serif italic text-base sm:text-lg text-[#594451] pl-4 border-l-2 border-[#EFA9C4]">
+                  I hate that I can't be right there to bring you a hot water bag, get your favorite chocolates, or rub your back until you fall asleep. It kills me knowing you're hurting while I'm stuck behind a screen.
                 </p>
 
                 <p>
-                  Your random updates, your complaints, your excitement about going somewhere, your silly questions...
+                  I might not always be available at the exact moment you want to talk, but that doesn't mean your pain, your silence, or your little stories are ever unimportant to me.
+                </p>
+
+                <p>
+                  Your random updates, your complaints, your cranky voice notes from under the blanket, your excitement about going somewhere, your silly questions...
                 </p>
 
                 <p className="font-serif italic text-lg sm:text-xl text-[#594451] pl-4 border-l-2 border-[#EFA9C4]">
-                  "I want to hear them."
+                  "I want to hear every single one of them."
                 </p>
 
                 <p>
@@ -156,20 +164,24 @@ export default function LetterSection() {
                 </p>
 
                 <p>
+                  You never have to put on a brave or cheerful face with me. When you're hurting, be cranky. Cry if you need to. Complain about the world. You are never, ever a burden to me.
+                </p>
+
+                <p>
                   You don't have to wait for something special to happen to tell me about your day.
                 </p>
 
                 <p>
-                  I hope you never feel like your little stories are too small to share with me.
+                  I hope you never feel like your little stories—or your hurt—are too small to share with me.
                 </p>
               </div>
 
               {/* Signoff */}
               <div className="mt-10 pt-6 border-t border-[#FCEBF2] flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
                 <div>
-                  <p className="text-sm text-[#9B8491]">With lots of appreciation,</p>
+                  <p className="text-sm text-[#9B8491]">With all my love and warmth,</p>
                   <p className="font-handwritten text-2xl sm:text-3xl text-[#C66C91] mt-1">
-                    Someone who enjoys your endless stories. ♡
+                    Someone who wants to protect your smile and hold your heart. ♡
                   </p>
                 </div>
 
@@ -189,4 +201,3 @@ export default function LetterSection() {
     </section>
   );
 }
-

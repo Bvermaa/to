@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Sparkles, Heart, ChevronDown } from 'lucide-react';
+import { Sparkles, Heart, ChevronDown, Flame } from 'lucide-react';
 
 export default function WelcomeScreen({ onOpenSurprise }) {
   const [isOpening, setIsOpening] = useState(false);
@@ -12,7 +12,7 @@ export default function WelcomeScreen({ onOpenSurprise }) {
     // Soft pastel confetti burst (petals, hearts, sparkles)
     try {
       confetti({
-        particleCount: 40,
+        particleCount: 45,
         spread: 60,
         origin: { y: 0.65 },
         colors: ['#EFA9C4', '#FCEBF2', '#C66C91', '#FFF4E5', '#EAE3FA'],
@@ -52,7 +52,7 @@ export default function WelcomeScreen({ onOpenSurprise }) {
         animate={{ y: [0, -12, 0], rotate: [0, -15, 0] }}
         transition={{ duration: 5, delay: 0.5, repeat: Infinity, ease: 'easeInOut' }}
       >
-        🦋
+        ♨️
       </motion.div>
       <motion.div
         className="absolute bottom-32 left-[14%] sm:left-[24%] text-lg select-none"
@@ -66,7 +66,7 @@ export default function WelcomeScreen({ onOpenSurprise }) {
         animate={{ y: [0, -8, 0], rotate: [0, -8, 0] }}
         transition={{ duration: 6, delay: 1, repeat: Infinity, ease: 'easeInOut' }}
       >
-        🌷
+        🧸
       </motion.div>
 
       {/* Little polaroid tag */}
@@ -78,7 +78,7 @@ export default function WelcomeScreen({ onOpenSurprise }) {
       >
         <span className="w-2 h-2 rounded-full bg-[#EFA9C4] animate-ping" />
         <Sparkles className="w-3.5 h-3.5 text-[#C66C91]" />
-        Special delivery • For someone who talks a lot (and I love it)
+        A warm sanctuary for painful days & endless stories
       </motion.div>
 
       {/* Main Heading */}
@@ -99,7 +99,7 @@ export default function WelcomeScreen({ onOpenSurprise }) {
         transition={{ duration: 0.7, delay: 0.3 }}
         className="text-lg sm:text-xl md:text-2xl text-[#594451]/85 font-medium max-w-xl mx-auto mb-3"
       >
-        Someone made a little corner of the internet just for you.
+        Someone made a warm, cozy corner of the internet just for you.
       </motion.p>
 
       {/* Small supporting text */}
@@ -109,7 +109,7 @@ export default function WelcomeScreen({ onOpenSurprise }) {
         transition={{ duration: 0.7, delay: 0.4 }}
         className="font-handwritten text-xl sm:text-2xl text-[#9B8491] max-w-md mx-auto mb-8"
       >
-        "And no, you don't have to share it with anyone. It's yours."
+        "Especially for the days your tummy hurts and you need gentle warmth."
       </motion.p>
 
       {/* Envelope Centerpiece Card with 3D feel */}
@@ -144,7 +144,7 @@ export default function WelcomeScreen({ onOpenSurprise }) {
           {/* Envelope body message */}
           <div className="mt-8 text-center">
             <span className="font-handwritten text-2xl text-[#C66C91] block mb-1">
-              To: The Girl With Endless Stories 💌
+              To: The Girl Who Deserves All The Warmth 💌
             </span>
             <span className="text-xs text-[#9B8491] tracking-wider uppercase font-medium">
               Click to break the seal
@@ -188,4 +188,3 @@ export default function WelcomeScreen({ onOpenSurprise }) {
     </section>
   );
 }
-
