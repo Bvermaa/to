@@ -70,3 +70,4 @@ export const remindersData = [
     noteColor: "#FFF8FA"
   }
 ];
+

@@ -139,3 +139,4 @@ export default function StoryModal({ story, isOpen, onClose }) {
     </AnimatePresence>
   );
 }
+

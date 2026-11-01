@@ -66,3 +66,4 @@ export const flowersData = [
     delay: 0.35
   }
 ];
+

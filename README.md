@@ -123,3 +123,4 @@ Open [`src/data/reminders.js`](file:///Users/bittuverma/Desktop/to/src/data/remi
 
 ### Option B: Netlify
 1. Go to [netlify.com](https://netlify.com) and drag and drop the `dist/` folder into Netlify Drop, or connect your GitHub repository with build command `npm run build` and publish directory `dist`.
+
