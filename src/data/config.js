@@ -1,5 +1,5 @@
 /**
- * WEBSITE STATUS CONFIGURATION
+ * WEBSITE STATUS & SPOTIFY CONFIGURATION
  * 
  * You (the website owner) can change `activeStatusKey` here whenever you want:
  * Options: 'cramp_care' | 'busy' | 'free' | 'call_later' | 'catching_up'
@@ -63,6 +63,55 @@ export const websiteConfig = {
       description: "Reading back through your texts and voice notes with so much love.",
       subtext: "Never apologize for sending too many messages. They mean the world to me."
     }
+  },
+
+  // Spotify Playlist & Music Configuration
+  // You can paste your own Spotify song or playlist embed URL here!
+  spotify: {
+    title: "Songs For When Everything Hurts",
+    subtitle: "Put your earphones on, hold your hot water bag, and let this comfort you 🎧",
+    tracks: [
+      {
+        id: "iktara",
+        title: "Iktara",
+        artist: "Amit Trivedi, Kavita Seth",
+        embedUrl: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtWvIm5K?utm_source=generator&theme=0",
+        mood: "Soft Gentle Hug 🌸",
+        tag: "Classic Comfort"
+      },
+      {
+        id: "until-i-found-you",
+        title: "Until I Found You",
+        artist: "Stephen Sanchez",
+        embedUrl: "https://open.spotify.com/embed/track/0T5iIrXA4P5GekEybyUT4N?utm_source=generator&theme=0",
+        mood: "Warm Love 🤍",
+        tag: "For You"
+      },
+      {
+        id: "choo-lo",
+        title: "Choo Lo",
+        artist: "The Local Train",
+        embedUrl: "https://open.spotify.com/embed/track/6FmB4vN64c489E5R38S68D?utm_source=generator&theme=0",
+        mood: "Emotional Calm 🌧️",
+        tag: "Soulful"
+      },
+      {
+        id: "golden-hour",
+        title: "Golden Hour",
+        artist: "JVKE",
+        embedUrl: "https://open.spotify.com/embed/track/5odlY52u43F5BjByhxg7wg?utm_source=generator&theme=0",
+        mood: "Dreamy Twilight ✨",
+        tag: "Sweet Sunset"
+      },
+      {
+        id: "lofi-cramps",
+        title: "Deep Rest & Sleep Lo-fi",
+        artist: "Peaceful Beats",
+        embedUrl: "https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS?utm_source=generator&theme=0",
+        mood: "Cramp Relief Bedtime 🛌",
+        tag: "Sleep & Calm"
+      }
+    ]
   },
 
   // 3 Section 4 message cards:
