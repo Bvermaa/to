@@ -376,6 +376,41 @@ export default function PeriodComfortKit() {
               </div>
             </div>
           </div>
+
+          {/* Spotify Comfort Music Card inside Cramp Care */}
+          <div className="bg-[#FFFDF9] rounded-3xl p-6 border border-[#FCEBF2] shadow-soft">
+            <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#FCEBF2]">
+              <div className="flex items-center gap-2">
+                <span className="w-7 h-7 rounded-full bg-[#1DB954]/15 flex items-center justify-center text-emerald-600 text-xs">
+                  🎧
+                </span>
+                <div>
+                  <h4 className="font-serif text-sm font-bold text-[#594451]">
+                    Comfort Music For Your Pain
+                  </h4>
+                  <span className="text-[10px] text-[#9B8491]">
+                    Let these melodies hold your heart while your body rests
+                  </span>
+                </div>
+              </div>
+              <span className="text-[10px] font-mono text-[#C66C91] font-bold uppercase tracking-wider bg-[#FDEFF4] px-2 py-0.5 rounded-full">
+                Spotify Embed
+              </span>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-inner-soft bg-black/5">
+              <iframe
+                title="Spotify Comfort Track"
+                src="https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtWvIm5K?utm_source=generator&theme=0"
+                width="100%"
+                height="152"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                className="rounded-2xl"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -10,6 +10,7 @@ import ReminderJar from './components/ReminderJar';
 import FlowerGarden from './components/FlowerGarden';
 import MiniQuiz from './components/MiniQuiz';
 import FinalSurprise from './components/FinalSurprise';
+import SpotifyPlayer from './components/SpotifyPlayer';
 import { useVisitTracker } from './hooks/useLocalStorage';
 
 export default function App() {
@@ -61,8 +62,11 @@ export default function App() {
         <FinalSurprise />
       </main>
 
+      {/* Floating Spotify Music Player Dock */}
+      <SpotifyPlayer />
+
       {/* Sweet Footer with Visit Tracker */}
-      <footer className="relative z-10 py-10 px-4 text-center border-t border-[#FCEBF2] bg-white/40 backdrop-blur-xs">
+      <footer className="relative z-10 py-10 px-4 text-center border-t border-[#FCEBF2] bg-white/40 backdrop-blur-xs pb-24 sm:pb-12">
         <div className="max-w-md mx-auto space-y-2">
           <p className="font-serif text-sm font-semibold text-[#594451]">
             For You, Silly ♡
