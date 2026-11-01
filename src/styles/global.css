@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color: #594451;
+  }
+
+  body {
+    background-color: #FFF7FA;
+    background-image: 
+      radial-gradient(#FCEBF2 1.5px, transparent 1.5px),
+      radial-gradient(#FCEBF2 1.5px, #FFF7FA 1.5px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    min-height: 100vh;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF7FA;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #EFA9C4;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C66C91;
+  }
+}
+
+@layer components {
+  .scrapbook-card {
+    @apply bg-white rounded-3xl border border-[#FCEBF2] shadow-soft transition-all duration-300;
+  }
+  
+  .scrapbook-card-hover {
+    @apply hover:shadow-soft-lg hover:-translate-y-1 hover:border-[#EFA9C4]/40;
+  }
+
+  .paper-texture {
+    background-color: #FFFFFF;
+    background-image: radial-gradient(#FCEBF2 0.75px, transparent 0.75px);
+    background-size: 16px 16px;
+  }
+
+  .letter-paper {
+    background-color: #FFFDF9;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(239, 169, 196, 0.18) 31px,
+      rgba(239, 169, 196, 0.18) 32px
+    );
+  }
+
+  .tape-strip {
+    @apply absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-amber-100/60 backdrop-blur-xs transform -rotate-1 rounded-xs border-t border-b border-white/60 shadow-xs pointer-events-none;
+  }
+}
+
+/* Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes swayPetal {
+  0%, 100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes pulseHeart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-sway-petal {
+  animation: swayPetal 3.5s ease-in-out infinite alternate;
+}
+
+.animate-pulse-heart {
+  animation: pulseHeart 2s ease-in-out infinite;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
