@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { EyeOff, Lock, Heart, ShieldAlert, Sparkles } from 'lucide-react';
+import { EyeOff, Lock, Heart, ShieldAlert, Sparkles, ShieldX } from 'lucide-react';
 
 export default function PrivacyShield() {
   const [isShieldActive, setIsShieldActive] = useState(false);
@@ -12,38 +12,41 @@ export default function PrivacyShield() {
     setToastMessage(reason);
     setShowWarningToast(true);
 
-    // Auto-dismiss toast after 4s, but shield remains until window is refocused or clicked
     setTimeout(() => {
       setShowWarningToast(false);
-    }, 4000);
+    }, 4500);
   };
 
   useEffect(() => {
-    // 1. Prevent Right-Click Context Menu
+    // 1. Block Right-Click Context Menu completely
     const handleContextMenu = (e) => {
       e.preventDefault();
-      triggerShield("Right-click is disabled to keep this page private 🌸");
+      triggerShield("Right-click is disabled to keep your little world private 🌸");
     };
 
-    // 2. Intercept Screenshot & Print Keyboard Shortcuts
+    // 2. Pre-emptive Shortcut Interception:
+    // On Mac, to press Cmd + Shift + 4, you must press Cmd and Shift first!
+    // The moment Cmd + Shift are pressed, we instantly blackout the screen BEFORE '4' is even hit!
     const handleKeyDown = (e) => {
       // PrintScreen key
-      if (e.key === 'PrintScreen') {
+      if (e.key === 'PrintScreen' || e.keyCode === 44) {
         e.preventDefault();
-        triggerShield("Screenshot detected! This little world is just for your eyes 🙈");
-        // Clear clipboard if possible
+        triggerShield("Screenshot blocked! This corner is private 🙈");
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText('This corner is private ♡');
         }
       }
 
-      // Mac screenshot: Cmd + Shift + 3, 4, 5
-      // Windows snippet: Win + Shift + S
-      if (
-        (e.metaKey && e.shiftKey && ['3', '4', '5'].includes(e.key)) ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'S' || e.key === 's'))
-      ) {
+      // Mac screenshot prep: Cmd + Shift
+      if (e.metaKey && e.shiftKey) {
+        setIsShieldActive(true);
         triggerShield("Screenshots are blocked! No saving allowed 🔒");
+      }
+
+      // Windows screenshot prep: Ctrl + Shift + S
+      if (e.ctrlKey && e.shiftKey) {
+        setIsShieldActive(true);
+        triggerShield("Snipping tool is blocked! 🔒");
       }
 
       // Print: Ctrl + P / Cmd + P
@@ -59,33 +62,31 @@ export default function PrivacyShield() {
       }
     };
 
-    // 3. Window Blur / Loss of Focus (Most effective technique for OS screenshot tools)
-    // When snipping tool or Mac screenshot overlay activates, window loses focus!
+    // 3. Instant Window Blur / App Switch / Screenshot Overlay trigger
+    // Whenever macOS screenshot crosshairs appear, or user switches apps, window blurs!
     const handleWindowBlur = () => {
       setIsShieldActive(true);
     };
 
     const handleWindowFocus = () => {
-      setIsShieldActive(false);
+      // Keep it up until clicked or dismiss smoothly
     };
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
         setIsShieldActive(true);
-      } else {
-        setIsShieldActive(false);
       }
     };
 
-    window.addEventListener('contextmenu', handleContextMenu);
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('contextmenu', handleContextMenu, { capture: true });
+    window.addEventListener('keydown', handleKeyDown, { capture: true });
     window.addEventListener('blur', handleWindowBlur);
     window.addEventListener('focus', handleWindowFocus);
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      window.removeEventListener('contextmenu', handleContextMenu);
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('contextmenu', handleContextMenu, { capture: true });
+      window.removeEventListener('keydown', handleKeyDown, { capture: true });
       window.removeEventListener('blur', handleWindowBlur);
       window.removeEventListener('focus', handleWindowFocus);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -94,6 +95,21 @@ export default function PrivacyShield() {
 
   return (
     <>
+      {/* Permanent Subtle Anti-Screenshot Watermark (visible across the whole background) */}
+      <div
+        className="fixed inset-0 pointer-events-none z-30 select-none overflow-hidden opacity-[0.035] flex flex-wrap gap-12 p-8"
+        aria-hidden="true"
+      >
+        {Array.from({ length: 48 }).map((_, idx) => (
+          <span
+            key={idx}
+            className="text-xs font-mono font-bold text-[#594451] uppercase -rotate-12 tracking-widest"
+          >
+            CONFIDENTIAL • FOR YOU ONLY ♡ • NO SCREENSHOTS
+          </span>
+        ))}
+      </div>
+
       {/* Privacy Toast Notification */}
       <AnimatePresence>
         {showWarningToast && (
@@ -122,22 +138,23 @@ export default function PrivacyShield() {
       <AnimatePresence>
         {isShieldActive && (
           <motion.div
-            initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
-            animate={{ opacity: 1, backdropFilter: 'blur(35px)' }}
-            exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
             onClick={() => setIsShieldActive(false)}
-            className="fixed inset-0 z-50 bg-[#FFF7FA]/80 backdrop-blur-2xl flex flex-col items-center justify-center p-6 text-center select-none cursor-pointer"
+            className="fixed inset-0 z-50 bg-[#FFF7FA]/95 backdrop-blur-3xl flex flex-col items-center justify-center p-6 text-center select-none cursor-pointer"
           >
-            <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-[#EFA9C4] to-[#FFF4E5] border-2 border-white shadow-soft-lg flex items-center justify-center text-3xl mb-4">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-[#EFA9C4] to-[#FFF4E5] border-2 border-white shadow-soft-lg flex items-center justify-center text-4xl mb-4">
               🙈
             </div>
 
-            <span className="text-xs font-mono uppercase tracking-widest text-[#C66C91] font-bold mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDEFF4] text-[#C66C91] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+              <ShieldX className="w-3.5 h-3.5" />
               Privacy Shield Active
-            </span>
+            </div>
 
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#594451] mb-3 max-w-md">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#594451] mb-2 max-w-md">
               No Screenshots Allowed!
             </h3>
 
@@ -145,13 +162,13 @@ export default function PrivacyShield() {
               "This little corner is made just for you live. No saving needed."
             </p>
 
-            <p className="text-xs text-[#9B8491] max-w-xs mb-6">
-              The screen automatically blurs when screenshot tools are opened. Click anywhere to return to your world.
+            <p className="text-xs text-[#9B8491] max-w-xs mb-6 leading-relaxed">
+              The screen automatically blurs whenever screenshot tools or screen recorders activate. Click anywhere to return to your world.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#594451] text-white text-xs font-medium shadow-xs">
+            <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#594451] text-white text-xs font-medium shadow-xs hover:scale-105 transition-transform">
               <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-              <span>Click to view your page</span>
+              <span>Click anywhere to resume viewing</span>
             </div>
           </motion.div>
         )}
@@ -159,4 +176,3 @@ export default function PrivacyShield() {
     </>
   );
 }
-

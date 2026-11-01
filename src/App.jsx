@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import FloatingDecorations from './components/FloatingDecorations';
+import WelcomeGate from './components/WelcomeGate';
 import WelcomeScreen from './components/WelcomeScreen';
 import LetterSection from './components/LetterSection';
 import PeriodComfortKit from './components/PeriodComfortKit';
@@ -16,6 +17,7 @@ import PrivacyShield from './components/PrivacyShield';
 import { useVisitTracker } from './hooks/useLocalStorage';
 
 export default function App() {
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const [favoriteCount, setFavoriteCount] = useState(0);
   const visitData = useVisitTracker();
 
@@ -28,8 +30,11 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen text-[#594451] font-body selection:bg-[#EFA9C4]/30 selection:text-[#C66C91]">
+      {/* Tap-to-Enter Welcome Gate (Fulfills browser autoplay policy so music plays from second 1) */}
+      <WelcomeGate isUnlocked={isUnlocked} onEnter={() => setIsUnlocked(true)} />
+
       {/* Background Music Engine: "blue" by yung kai (plays continuously throughout the site) */}
-      <BackgroundMusic />
+      <BackgroundMusic isUnlocked={isUnlocked} />
 
       {/* Anti-Screenshot & Privacy Protection System */}
       <PrivacyShield />

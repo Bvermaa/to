@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX, Disc, Sparkles, Heart } from 'lucide-react';
 
-export default function BackgroundMusic() {
+export default function BackgroundMusic({ isUnlocked = false }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
   const iframeRef = useRef(null);
 
   const sendCommand = (func, args = '') => {
@@ -17,22 +16,22 @@ export default function BackgroundMusic() {
     }
   };
 
-  const startMusic = () => {
+  const playMusic = () => {
     sendCommand('unMute');
     sendCommand('playVideo');
     setIsPlaying(true);
-    setHasInteracted(true);
+  };
+
+  const pauseMusic = () => {
+    sendCommand('pauseVideo');
+    setIsPlaying(false);
   };
 
   const togglePlay = () => {
     if (isPlaying) {
-      sendCommand('pauseVideo');
-      setIsPlaying(false);
+      pauseMusic();
     } else {
-      sendCommand('unMute');
-      sendCommand('playVideo');
-      setIsPlaying(true);
-      setHasInteracted(true);
+      playMusic();
     }
   };
 
@@ -46,22 +45,33 @@ export default function BackgroundMusic() {
     }
   };
 
-  // Listen to any first click or tap on the page to unlock browser audio policy!
+  // When user opens the welcome gate or touches the screen, start the song immediately!
   useEffect(() => {
-    const handleFirstInteraction = () => {
-      if (!hasInteracted) {
-        startMusic();
+    if (isUnlocked) {
+      // Small timeout to allow iframe to be fully loaded
+      const timer = setTimeout(() => {
+        playMusic();
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isUnlocked]);
+
+  // Global fallback interaction listener
+  useEffect(() => {
+    const handleInteraction = () => {
+      if (!isPlaying) {
+        playMusic();
       }
     };
 
-    window.addEventListener('click', handleFirstInteraction, { once: true });
-    window.addEventListener('touchstart', handleFirstInteraction, { once: true });
+    window.addEventListener('click', handleInteraction, { once: true });
+    window.addEventListener('touchstart', handleInteraction, { once: true });
 
     return () => {
-      window.removeEventListener('click', handleFirstInteraction);
-      window.removeEventListener('touchstart', handleFirstInteraction);
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
     };
-  }, [hasInteracted]);
+  }, [isPlaying]);
 
   return (
     <>
@@ -84,7 +94,7 @@ export default function BackgroundMusic() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/90 backdrop-blur-md border-2 border-[#EFA9C4]/60 shadow-soft-lg hover:shadow-glow-pink transition-all"
+          className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/95 backdrop-blur-md border-2 border-[#EFA9C4]/70 shadow-soft-lg hover:shadow-glow-pink transition-all"
         >
           {/* Vinyl Disc Icon with Smooth Rotation when playing */}
           <motion.div
