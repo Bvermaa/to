@@ -11,6 +11,7 @@ import FlowerGarden from './components/FlowerGarden';
 import MiniQuiz from './components/MiniQuiz';
 import FinalSurprise from './components/FinalSurprise';
 import SpotifyPlayer from './components/SpotifyPlayer';
+import BackgroundMusic from './components/BackgroundMusic';
 import PrivacyShield from './components/PrivacyShield';
 import { useVisitTracker } from './hooks/useLocalStorage';
 
@@ -27,6 +28,9 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen text-[#594451] font-body selection:bg-[#EFA9C4]/30 selection:text-[#C66C91]">
+      {/* Background Music Engine: "blue" by yung kai (plays continuously throughout the site) */}
+      <BackgroundMusic />
+
       {/* Anti-Screenshot & Privacy Protection System */}
       <PrivacyShield />
 

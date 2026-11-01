@@ -65,51 +65,50 @@ export const websiteConfig = {
     }
   },
 
-  // Spotify Playlist & Music Configuration
-  // You can paste your own Spotify song or playlist embed URL here!
+  // Featured Song & Playlist Configuration
   spotify: {
     title: "Songs For When Everything Hurts",
-    subtitle: "Put your earphones on, hold your hot water bag, and let this comfort you 🎧",
+    subtitle: "Playing: blue by yung kai 💙",
+    featuredTrack: {
+      title: "blue",
+      artist: "yung kai",
+      youtubeId: "IpFX2vq8HKw", // Official Full Song
+      spotifyTrackId: "7x4AjK76OJYPjR0gRvftd6", // Official Spotify Track
+      embedUrl: "https://open.spotify.com/embed/track/7x4AjK76OJYPjR0gRvftd6?utm_source=generator&theme=0",
+      mood: "Your Song • Infinite Love 💙"
+    },
     tracks: [
+      {
+        id: "blue-yung-kai",
+        title: "blue",
+        artist: "yung kai",
+        embedUrl: "https://open.spotify.com/embed/track/7x4AjK76OJYPjR0gRvftd6?utm_source=generator&theme=0",
+        mood: "Our Song • Pure Comfort 💙",
+        tag: "Now Playing"
+      },
       {
         id: "iktara",
         title: "Iktara",
         artist: "Amit Trivedi, Kavita Seth",
-        embedUrl: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtWvIm5K?utm_source=generator&theme=0",
+        embedUrl: "https://open.spotify.com/embed/track/1XrSjpNe49IiygZfzb74pk?utm_source=generator&theme=0",
         mood: "Soft Gentle Hug 🌸",
         tag: "Classic Comfort"
       },
       {
-        id: "until-i-found-you",
-        title: "Until I Found You",
-        artist: "Stephen Sanchez",
-        embedUrl: "https://open.spotify.com/embed/track/0T5iIrXA4P5GekEybyUT4N?utm_source=generator&theme=0",
-        mood: "Warm Love 🤍",
-        tag: "For You"
+        id: "peaceful-piano",
+        title: "Peaceful Piano Melodies",
+        artist: "Gentle Instrumental",
+        embedUrl: "https://open.spotify.com/embed/playlist/37i9dQZF1DWZqd5JICZI0u?utm_source=generator&theme=0",
+        mood: "Deep Cramp Relief 🛌",
+        tag: "Sleep & Rest"
       },
       {
-        id: "choo-lo",
-        title: "Choo Lo",
-        artist: "The Local Train",
-        embedUrl: "https://open.spotify.com/embed/track/6FmB4vN64c489E5R38S68D?utm_source=generator&theme=0",
-        mood: "Emotional Calm 🌧️",
-        tag: "Soulful"
-      },
-      {
-        id: "golden-hour",
-        title: "Golden Hour",
-        artist: "JVKE",
-        embedUrl: "https://open.spotify.com/embed/track/5odlY52u43F5BjByhxg7wg?utm_source=generator&theme=0",
-        mood: "Dreamy Twilight ✨",
-        tag: "Sweet Sunset"
-      },
-      {
-        id: "lofi-cramps",
-        title: "Deep Rest & Sleep Lo-fi",
-        artist: "Peaceful Beats",
+        id: "lofi-beats",
+        title: "Chill Lo-Fi Bedroom Beats",
+        artist: "Lofi Girl & Friends",
         embedUrl: "https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS?utm_source=generator&theme=0",
-        mood: "Cramp Relief Bedtime 🛌",
-        tag: "Sleep & Calm"
+        mood: "Warm Cozy Hug ☕",
+        tag: "Calm Beats"
       }
     ]
   },

@@ -400,8 +400,8 @@ export default function PeriodComfortKit() {
 
             <div className="rounded-2xl overflow-hidden shadow-inner-soft bg-black/5">
               <iframe
-                title="Spotify Comfort Track"
-                src="https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtWvIm5K?utm_source=generator&theme=0"
+                title="Spotify Comfort Track - blue by yung kai"
+                src="https://open.spotify.com/embed/track/7x4AjK76OJYPjR0gRvftd6?utm_source=generator&theme=0"
                 width="100%"
                 height="152"
                 frameBorder="0"
